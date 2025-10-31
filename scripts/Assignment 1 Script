@@ -1,0 +1,111 @@
+CREATE DATABASE IF NOT EXISTS SanFranSortedDatabase;
+USE SanFranSortedDatabase;
+
+# Table to import .csv data
+CREATE TABLE IF NOT EXISTS OriginalTable (
+    patron_type_code INT,
+    patron_type_definition VARCHAR(30),
+    checkout_total INT,
+    renewal_total INT,
+    age_range VARCHAR(30),
+    home_library_code VARCHAR(30),
+    home_library_definition VARCHAR(30),
+    circulation_activty_month VARCHAR(30),
+    circulation_active_year VARCHAR(30),
+    notification_medium_code VARCHAR(30),
+    notification_code_definition VARCHAR(30),
+    provided_email_address VARCHAR(30),
+    within_san_francisco_county VARCHAR(30),
+    year_patron_registered INT
+);
+
+
+#Imports data from .CSV to OriginalTable
+LOAD DATA LOCAL INFILE 
+'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/SFPL_DataSF_library-usage_Jan_2023.csv'
+INTO TABLE OriginalTable
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(patron_type_code, patron_type_definition, checkout_total, renewal_total,
+age_range, home_library_code, home_library_definition, circulation_activty_month,
+circulation_active_year, notification_medium_code,notification_code_definition, 
+provided_email_address, within_san_francisco_county, year_patron_registered);
+
+
+#Separating the Tables
+CREATE TABLE IF NOT EXISTS patron (
+    patron_id INT AUTO_INCREMENT PRIMARY KEY,
+    patron_type_code INT,
+    patron_type_definition VARCHAR(30),
+    age_range VARCHAR(30),
+    home_library_code VARCHAR(30),
+    home_library_definition VARCHAR(30),
+    provided_email_address VARCHAR(30),
+    within_san_francisco_county VARCHAR(30),
+    year_patron_registered INT
+);
+
+CREATE TABLE IF NOT EXISTS circulation_activity (
+    activity_id INT AUTO_INCREMENT PRIMARY KEY,
+    checkout_total INT,
+    renewal_total INT,
+    circulation_activty_month VARCHAR(30),
+    circulation_active_year VARCHAR(30),
+    FOREIGN KEY (patron_id) REFERENCES patron(patron_id)
+);
+
+CREATE TABLE IF NOT EXISTS notification_preferences (
+    notification_id INT AUTO_INCREMENT PRIMARY KEY,
+    notification_medium_code VARCHAR(30),
+    notification_code_definition VARCHAR(30),
+    FOREIGN KEY (patron_id) REFERENCES patron(patron_id)
+);
+
+CREATE TABLE IF NOT EXISTS home_library (
+    id INT AUTO_INCREMENT PRIMARY KEY,  
+    home_library_code VARCHAR(30),     
+    home_library_definition VARCHAR(30)
+);
+
+
+#Inserting columns from OriginalTable to Separate Tables
+
+#Patron Insertion
+INSERT INTO patron (
+    patron_type_code, patron_type_definition, age_range,
+    home_library_code, home_library_definition,
+    provided_email_address, within_san_francisco_county, year_patron_registered
+)
+SELECT
+    patron_type_code, patron_type_definition, age_range,
+    home_library_code, home_library_definition,
+    provided_email_address, within_san_francisco_county, year_patron_registered
+FROM OriginalTable;
+
+#circulation_activiy Insertion
+INSERT INTO circulation_activity (
+    checkout_total, renewal_total,
+    circulation_activty_month, circulation_active_year
+)
+SELECT
+    checkout_total, renewal_total,
+    circulation_activty_month, circulation_active_year
+FROM OriginalTable;
+
+#notification_preferences Insertion
+INSERT INTO notification_preferences (
+    notification_medium_code, notification_code_definition
+)
+SELECT
+    notification_medium_code, notification_code_definition
+FROM OriginalTable;
+
+#home_library Insertion
+INSERT INTO home_library (
+    home_library_code, home_library_definition
+)
+SELECT home_library_code, home_library_definition
+FROM OriginalTable;
+
