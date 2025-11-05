@@ -34,7 +34,7 @@ circulation_active_year, notification_medium_code,notification_code_definition,
 provided_email_address, within_san_francisco_county, year_patron_registered);
 
 
-#Separating the Tables
+#Creating 4 tables to separate data
 CREATE TABLE IF NOT EXISTS patron (
     patron_id INT AUTO_INCREMENT PRIMARY KEY,
     patron_type_code INT,
@@ -52,15 +52,15 @@ CREATE TABLE IF NOT EXISTS circulation_activity (
     checkout_total INT,
     renewal_total INT,
     circulation_activty_month VARCHAR(30),
-    circulation_active_year VARCHAR(30),
-    FOREIGN KEY (patron_id) REFERENCES patron(patron_id)
+    circulation_active_year VARCHAR(30)
+
 );
 
 CREATE TABLE IF NOT EXISTS notification_preferences (
     notification_id INT AUTO_INCREMENT PRIMARY KEY,
     notification_medium_code VARCHAR(30),
-    notification_code_definition VARCHAR(30),
-    FOREIGN KEY (patron_id) REFERENCES patron(patron_id)
+    notification_code_definition VARCHAR(30)
+
 );
 
 CREATE TABLE IF NOT EXISTS home_library (
@@ -108,4 +108,3 @@ INSERT INTO home_library (
 )
 SELECT home_library_code, home_library_definition
 FROM OriginalTable;
-
