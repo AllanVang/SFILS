@@ -1,5 +1,9 @@
 **Overview**  
 Down below you can find information on how to properly import and run the file I created.
+I wanted to mention ChatGPT was used for code that imported the database over to my query.
+The import wizard import method mentioned on the slide would have taken hours if not days
+to fully import the database. 
+
 
 **Before you get started…**
 
