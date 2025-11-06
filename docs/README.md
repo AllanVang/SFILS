@@ -1,8 +1,10 @@
 **Overview**  
 Down below you can find information on how to properly import and run the file I created.
-I wanted to mention ChatGPT was used for code that imported the database over to my query.
+I wanted to mention ChatGPT was used for code that imported the database over to my query. 
 The import wizard import method mentioned on the slide would have taken hours if not days
-to fully import the database. 
+to fully import the database. I also use AI to walk me throught the steps on creating an 
+application through Python. I had no experience prior to doing this, but after fiddling
+with the code AI gave me I was able to run the database outside of MySQL.
 
 
 **Before you get started…**
@@ -14,12 +16,12 @@ to fully import the database.
 * Download the database SFPL\_DataSF\_library-usage\_Jan\_2023.csv
 
 If you don’t have MySQL install please refer to this link for installation:  
-[https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
+https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/
 
 Alternatively (and preferably) refer to A360 presentation 13, starting on slide 44 
 
 To get the database .csv please refer to the link below for download:  
-[https://github.com/KathiraveluLab/SFILS/](https://github.com/KathiraveluLab/SFILS/)
+https://github.com/KathiraveluLab/SFILS/
 
 **Getting Started:**
 
