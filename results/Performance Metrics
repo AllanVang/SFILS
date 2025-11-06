@@ -1,1 +1,8 @@
+The query took less than thirty seconds to run on mysql. 
 
+See the RunTime.png in results folder for the screenshot. 
+
+How I obtained this time:
+
+For my query I had recreated the .csv file in a seperate table
+Then I had its contents inserted to the newly seperate tables
