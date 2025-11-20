@@ -5,7 +5,7 @@ What you’ll need:
 
 
 Mongodb Atlas
-MongoDB Shell / Mongosh
+MongoDB Shell / Mongosh (optional)
 MongoDB Compass
 Python
 Pymongo
@@ -28,8 +28,12 @@ www.python.org/downloads/
 Information and installation for Pymongo:
 www.mongodb.com/docs/languages/python/pymongo-driver/current/
 
-Importing mySQL Database:
-Through Pymongo interface 
+1. Create a Database Cluster through MongoDB Atlas.
+The MongoDB Atlas will walk you through the exact steps on how to do this.
+This is where you installl pymongo (If you haven't already) and set up a connection.
+From there follow the instuctions on making a connecion through MongoDB Compass.
+
+2. Importing mySQL Database through Pymongo.
 
 Citation: 
 Pradeban’s CSCE A360 Presentation Slide 20
