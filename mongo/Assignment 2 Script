@@ -1,8 +1,8 @@
 # Code run in Pymongo
 #Connects MySQL with Python MySQL driver
 
-# I would like to mention the code provided is a tweeked code I gathered from Microsoft Copilot AI.
-#I still had to do the configurations myself and understand what was the code was doing.
+# I would like to mention large portion of the code provided is code I gathered from Microsoft Copilot AI.
+#I still had to do the configurations myself and understand what was the code was doing. 
 
 
 #I don't know if I should be sharing my database password so I won't be showing it
