@@ -7,14 +7,14 @@ from pymongo import MongoClient
 # Connect to MySQL
 conn = mysql.connector.connect(
     user="root",
-    password="PASSWORD",   # MySQL password
+    password=Mimikyu49,   # MySQL password
     host="localhost",
     database="SanFranSortedDatabase"
 )
 cursor = conn.cursor(dictionary=True)
 
 # Connect to MongoDB Atlas # Stringcopypasted from MongoDB Atlas.
-client = MongoClient("mongodb+srv://Allankpvang:”PASSWORD”@assignment2.rttjxxl.mongodb.net/?retryWrites=true&w=majority")
+client = MongoClient("mongodb+srv://Allankpvang:Mimikyu49@assignment2.rttjxxl.mongodb.net/?retryWrites=true&w=majority")
 db = client["SanFranSortedDatabase"]
 
 # Function to transfer only the first 10,000 rows
