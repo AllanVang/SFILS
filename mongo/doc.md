@@ -9,6 +9,7 @@ MongoDB Shell / Mongosh (optional)
 MongoDB Compass
 Python
 Pymongo
+flask (optional)
 
 
 Installation Instructions:
@@ -25,6 +26,10 @@ www.mongodb.com/try/download/compass
 Python programming language:
 www.python.org/downloads/
 
+Flask: (run terminal as an admin and enter the code below)
+pip install flask
+
+
 Information and installation for Pymongo:
 www.mongodb.com/docs/languages/python/pymongo-driver/current/
 
@@ -35,6 +40,8 @@ From there follow the instuctions on making a connecion through MongoDB Compass.
 
 2. Importing mySQL Database through Pymongo Python terminal.
 Use the code in "Assignment2Scripts.py" file to transfer the database over.
+
+Under "apps" folder is the interface to interact with the database. Flask installation required.
    
 
 Citation: 
