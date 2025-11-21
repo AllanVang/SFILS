@@ -26,7 +26,7 @@ www.mongodb.com/try/download/compass
 Python programming language:
 www.python.org/downloads/
 
-Flask: (run terminal as an admin and enter the code below)
+Flask: run terminal as an admin and enter the code following code:
 pip install flask
 
 
