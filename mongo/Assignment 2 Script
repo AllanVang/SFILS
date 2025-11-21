@@ -1,6 +1,10 @@
 # Code run in Pymongo
-
 #Connects MySQL with Python MySQL driver
+
+# I would like to mention the code provided is a tweeked code I gathered from Microsoft Copilot AI.
+#I still had to do the configurations myself and understand what was the code was doing.
+
+
 #I don't know if I should be sharing my database password so I won't be showing it
 #Also note I am only samply the first 10k rows. When I tried importing everythin I ran out of free storage from Atlas.
 
@@ -17,7 +21,7 @@ conn = mysql.connector.connect(
 )
 cursor = conn.cursor(dictionary=True)
 
-# Connect to MongoDB Atlas
+# Connect to MongoDB Atlas # Stringcopypasted from MongoDB Atlas.
 client = MongoClient("mongodb+srv://Allankpvang:”PASSWORD”@assignment2.rttjxxl.mongodb.net/?retryWrites=true&w=majority")
 db = client["SanFranSortedDatabase"]
 
