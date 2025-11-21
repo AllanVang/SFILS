@@ -1,23 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Patron Data</title>
+    <title>Interactive Database</title>
 </head>
 <body>
-    <h1>Patron Collection (Sample)</h1>
-    <table border="1">
-        <tr>
-            {% for key in data[0].keys() %}
-                <th>{{ key }}</th>
+    <h1>Search MongoDB Collections</h1>
+
+    <!-- Search Form -->
+    <form method="POST">
+        <label for="collection">Choose a collection:</label>
+        <select name="collection">
+            <option value="patron" {% if collection == "patron" %}selected{% endif %}>Patron</option>
+            <option value="home_library" {% if collection == "home_library" %}selected{% endif %}>Home Library</option>
+            <option value="circulation_activity" {% if collection == "circulation_activity" %}selected{% endif %}>Circulation Activity</option>
+            <option value="notification_preferences" {% if collection == "notification_preferences" %}selected{% endif %}>Notification Preferences</option>
+        </select>
+
+        <br><br>
+        <label for="field">Field name:</label>
+        <input type="text" name="field" placeholder="e.g. name">
+
+        <label for="value">Search value:</label>
+        <input type="text" name="value" placeholder="e.g. John">
+
+        <button type="submit">Search</button>
+    </form>
+
+    <hr>
+
+    <!-- Results -->
+    {% if data %}
+        <table border="1">
+            <tr>
+                {% for key in data[0].keys() %}
+                    <th>{{ key }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in data %}
+            <tr>
+                {% for value in row.values() %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
             {% endfor %}
-        </tr>
-        {% for row in data %}
-        <tr>
-            {% for value in row.values() %}
-                <td>{{ value }}</td>
-            {% endfor %}
-        </tr>
-        {% endfor %}
-    </table>
+        </table>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
 </body>
 </html>
