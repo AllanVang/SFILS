@@ -3,9 +3,9 @@ Apologies for the late submission. I had orginally had the script done the day i
 
 Just some notes:
 
-I would like to mention large portion of the code provided is code I gathered from Microsoft Copilot AI.
-I still had to do the configurations myself and understand what was the code was doing. 
-w3schools, the official MongoDB website, and the class presentation slides were my other sources for implementation.
+I would like to mention portions of the code provided is code I gathered was generated with the help of Microsoft Copilot AI.
+I still had to do the configurations myself and understand what was the code was doing. Hence why I redid the script.
+W3schools, the official MongoDB website, and the class presentation slides were my other sources for implementation.
 
 You can see that I took a screenshot of what I have to show that what I had actually works.
 Lastly I am only samply the first 10k rows. When I tried importing everything I ran out of free storage from MongoDB Atlas.
