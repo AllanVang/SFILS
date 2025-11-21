@@ -11,7 +11,7 @@ db = client["SanFranSortedDatabase"]
 def index():
   
     # Fetch first 100 rows from patron collection for display
-    patrons = list(db.patron.find().limit(100))
+    patrons = list(db.patron.find().limit(10000))
     return render_template("index.html", data=patrons)
 
 if __name__ == "__main__":
