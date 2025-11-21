@@ -33,7 +33,9 @@ The MongoDB Atlas will walk you through the exact steps on how to do this.
 This is where you installl pymongo (If you haven't already) and set up a connection.
 From there follow the instuctions on making a connecion through MongoDB Compass.
 
-2. Importing mySQL Database through Pymongo.
+2. Importing mySQL Database through Pymongo Python terminal.
+Use the code in "Assignment 2 Scripts" folder to transfer the database.
+   
 
 Citation: 
 Pradeban’s CSCE A360 Presentation Slide 20
