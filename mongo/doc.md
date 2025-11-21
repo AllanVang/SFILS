@@ -34,7 +34,7 @@ This is where you installl pymongo (If you haven't already) and set up a connect
 From there follow the instuctions on making a connecion through MongoDB Compass.
 
 2. Importing mySQL Database through Pymongo Python terminal.
-Use the code in "Assignment 2 Scripts" folder to transfer the database.
+Use the code in "Assignment2Scripts.py" file to transfer the database over.
    
 
 Citation: 
